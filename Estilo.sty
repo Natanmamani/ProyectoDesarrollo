@@ -1,0 +1,147 @@
+%:::::::::::::::::::::::::::::::::::::::::
+%:::::::::::::  CARATULA    ::::::::::::::
+%:::::::::::::::::::::::::::::::::::::::::
+\renewcommand{\maketitle}
+{
+    \thispagestyle{empty}
+    \begin{center}
+      % Datos de la institución
+      \baselineskip = 1cm
+      {\large{\textbf{UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO}}}\\
+        {\large{\textbf{FACULTAD DE {\@faculty}}}}\\
+        {\large{\textbf{ESCUELA PROFESIONAL DE {\@school}}}}
+        \begin{figure}[h]
+            \center
+            \includegraphics[scale = 0.18]{images/escudo}
+        \end{figure}
+
+        {\large{\textbf{PROYECTO DE CURSO}}}
+    \end{center}
+
+    % Título del proyecto
+    \begin{center}
+        \tikz{
+          \node[draw=black, shape=rectangle, line width = 3pt, rounded corners=4pt, text width=\linewidth-1cm, align=center, inner sep=0.5cm]{\large \textbf{\mytitle{\@title}} \par};
+        }
+    \end{center}
+
+    % Integrantes con códigos a la derecha y docente (bloque alineado a la derecha)
+    \vspace{0.5cm}
+    \noindent\hfill
+    \begin{minipage}{10.5cm}
+    {\renewcommand{\arraystretch}{1.4}
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \multicolumn{2}{@{}l@{}}{\textbf{INTEGRANTES:}} \\[0.1cm]
+        {\@memberOne}   & {\@codeOne}   \\
+        {\@memberTwo}   & {\@codeTwo}   \\
+        {\@memberThree} & {\@codeThree} \\
+        {\@memberFour}  & {\@codeFour}  \\
+        {\@memberFive}  & {\@codeFive}  \\[0.4cm]
+        \multicolumn{2}{@{}l@{}}{\textbf{DOCENTE:}} \\[0.1cm]
+        \multicolumn{2}{@{}l@{}}{{\@docente}} \\
+    \end{tabular*}
+    }
+    \end{minipage}
+    \begin{center}
+    \vspace*{1.5cm}
+    \textbf{\large CUSCO - PERÚ}\\
+    \vspace*{0.5cm}
+    \textbf{\large \the\year}\\
+    \end{center}
+    \vspace*{\stretch{1}}
+}
+
+% Declarar los argumentos adicionales
+\newcommand{\orientador}{\gdef\@orientador}
+\newcommand{\coorientador}{\gdef\@coorientador}
+\newcommand{\academicdegree}{\gdef\@academicdegree}
+\newcommand{\faculty}{\gdef\@faculty}
+\newcommand{\school}{\gdef\@school}
+\newcommand{\memberOne}{\gdef\@memberOne}
+\newcommand{\codeOne}{\gdef\@codeOne}
+\newcommand{\memberTwo}{\gdef\@memberTwo}
+\newcommand{\codeTwo}{\gdef\@codeTwo}
+\newcommand{\memberThree}{\gdef\@memberThree}
+\newcommand{\codeThree}{\gdef\@codeThree}
+\newcommand{\memberFour}{\gdef\@memberFour}
+\newcommand{\codeFour}{\gdef\@codeFour}
+\newcommand{\memberFive}{\gdef\@memberFive}
+\newcommand{\codeFive}{\gdef\@codeFive}
+\newcommand{\docente}{\gdef\@docente}
+
+%::::::::::::::::::::::::::::::::::::::::::::::::::::
+%::::::::::::::    FORMATO CAPITULOS   ::::::::::::::
+%::::::::::::::      ESPECIALES    ::::::::::::::::::
+
+%::::::::::::::::     PRESENTACION     ::::::::::::::
+\newenvironment{presentacion}
+{
+    \newpage
+    \chapter*{PRESENTACIÓN}
+    \addcontentsline{toc}{chapter}{PRESENTACIÓN}
+}
+
+%::::::::::::::::::  DEDICATORIA       ::::::::::::::
+\newenvironment{dedicatoria}
+{
+    \newpage
+    \chapter*{DEDICATORIA}
+    \addcontentsline{toc}{chapter}{DEDICATORIA}
+}
+
+%:::::::::::::::::  AGRADECIMIENTO   ::::::::::::::::
+\newenvironment{agradecimiento}
+{
+    \newpage
+    \chapter*{AGRADECIMIENTO}
+    \addcontentsline{toc}{chapter}{AGRADECIMIENTO}
+}
+
+%::::::::::::::::::::::  RESUMEN     ::::::::::::::::
+\newenvironment{resumen}
+{
+    \newpage
+    \chapter*{RESUMEN}
+    \addcontentsline{toc}{chapter}{RESUMEN}
+}
+
+%::::::::::::::::      ABSTRACT      ::::::::::::::::
+\newenvironment{abs}
+{
+    \newpage
+    \chapter*{ABSTRACT}
+    \addcontentsline{toc}{chapter}{ABSTRACT}
+}
+
+%::::::::::::::::     INTRODUCCIÓN     ::::::::::::::::
+\newenvironment{introduccion}
+{
+    \newpage
+    \chapter*{INTRODUCCIÓN}
+    \addcontentsline{toc}{chapter}{INTRODUCCIÓN}
+}
+
+%::::::::::::::::     DISCUSIONES     ::::::::::::::::
+\newenvironment{discusiones}
+{
+    \newpage
+    \chapter*{DISCUSIONES}
+    \addcontentsline{toc}{chapter}{DISCUSIONES}
+}
+
+%::::::::::::::::     CONCLUSIONES     ::::::::::::::::
+\newenvironment{conclusiones}
+{
+    \newpage
+    \chapter*{CONCLUSIONES}
+    \addcontentsline{toc}{chapter}{CONCLUSIONES}
+}
+
+%::::::::::::::::     RECOMENDACION     ::::::::::::::::
+\newenvironment{recomendaciones}
+{
+    \newpage
+    \chapter*{RECOMENDACIONES}
+    \addcontentsline{toc}{chapter}{RECOMENDACIONES}
+}
+
