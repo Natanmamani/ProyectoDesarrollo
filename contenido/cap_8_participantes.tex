@@ -23,18 +23,76 @@
 
 \section{Equipo externo}
 
-\lipsum[1]
+El desarrollo exitoso de la plataforma requiere de la participación activa de actores externos
+al equipo de desarrollo. Estas alianzas estratégicas son fundamentales para garantizar que los
+requerimientos funcionales y no funcionales reflejen fielmente las necesidades reales de los
+usuarios finales, así como para asegurar la viabilidad técnica y administrativa de la solución
+en el contexto institucional de la UNSAAC.
 
-\begin{table}[H]
-    \centering
-    \caption{Equipo externo del proyecto}
-    \begin{tabular}{|l|l|l|}
-        \hline
-        \textbf{Entidad/Persona} & \textbf{Rol} & \textbf{Tipo de participación} \\
-        \hline
-        Entidad 1 & Asesor externo & Descripción de participación \\
-        \hline
-        Entidad 2 & Patrocinador & Descripción de participación \\
-        \hline
-    \end{tabular}
-\end{table}
+\subsection{Alianzas Estratégicas}
+
+Se han identificado las siguientes categorías de aliados externos, clasificados por su grado
+de influencia sobre el proyecto:
+
+\begin{enumerate}[label=\textbf{\Roman*.}]
+    \item \textbf{Oficinas internas de la UNSAAC (usuarios clave):} Son los actores primarios del
+        sistema. Su participación en el levantamiento de requerimientos garantiza la alineación de
+        la solución con los procesos administrativos reales, en concordancia con los principios de
+        la ingeniería de requerimientos (entrevistas, observación directa, análisis de documentos).
+
+    \item \textbf{Asesores y docentes especialistas:} Brindan orientación técnica y académica
+        sobre metodologías de desarrollo, arquitectura de software y criterios de calidad.
+
+    \item \textbf{Proveedores de infraestructura tecnológica:} Proporcionan los servicios en la
+        nube y herramientas de desarrollo necesarios para el despliegue y la operación de la
+        plataforma.
+
+    \item \textbf{Usuarios finales (muestra representativa):} Estudiantes universitarios
+        seleccionados para participar en pruebas de usabilidad y sesiones de validación de
+        prototipos.
+\end{enumerate}
+
+\subsection{Mecanismos de Coordinación}
+
+Para garantizar una comunicación efectiva y una gestión ordenada de las relaciones con los
+actores externos, se establecen los siguientes mecanismos:
+
+\subsubsection{Con las oficinas de la UNSAAC}
+
+\begin{itemize}
+    \item \textbf{Sesiones de levantamiento de requerimientos:} Se realizarán entrevistas
+        semiestructuradas con los funcionarios responsables de cada oficina, usando guías de
+        entrevista predefinidas. Los resultados serán documentados en fichas de requerimientos.
+    \item \textbf{Revisiones de validación:} Al finalizar cada entregable, se convocará una
+        sesión de presentación de avances para obtener retroalimentación formal.
+    \item \textbf{Canal de comunicación oficial:} Correo institucional UNSAAC, con copia al
+        docente responsable y al líder del equipo.
+    \item \textbf{Actas de reunión:} Toda interacción con actores institucionales será
+        documentada mediante actas firmadas, archivadas en el repositorio del proyecto.
+    \end{itemize}
+
+    \subsubsection{Con los asesores académicos}
+
+    \begin{itemize}
+    \item \textbf{Consultas técnicas periódicas:} Reuniones quincenales con los docentes
+        responsables para revisión de arquitectura, decisiones de diseño y cumplimiento de la
+        rúbrica.
+    \item \textbf{Retroalimentación sobre entregables:} Revisión de documentos técnicos antes de
+        cada fecha de entrega formal.
+    \end{itemize}
+
+    \subsubsection{Con los usuarios finales (estudiantes)}
+
+    \begin{itemize}
+    \item \textbf{Pruebas de usabilidad controladas:} Sesiones estructuradas de 30-45 minutos
+        con una muestra mínima de 10 estudiantes.
+
+    \subsubsection{Con los proveedores de infraestructura}
+
+    \begin{itemize}
+    \item \textbf{Configuración del entorno:} Documentación de toda la configuración de
+        servidores, bases de datos y pipelines en la carpeta \texttt{/docs/infraestructura/} del
+        repositorio.
+    \item \textbf{Monitoreo de disponibilidad:} Uso de las herramientas nativas del proveedor
+        (dashboards de AWS / Render) para verificar el indicador I-06.
+\end{itemize}

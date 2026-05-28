@@ -1,14 +1,86 @@
 \newpage
 \chapter{EVALUACIÓN Y MONITOREO}
+La evaluación y el monitoreo constituyen un componente crítico dentro del ciclo de vida del
+proyecto, ya que permiten verificar el grado de cumplimiento de los objetivos planteados,
+identificar desviaciones tempranas y aplicar acciones correctivas oportunas. El presente plan
+adopta un enfoque de monitoreo continuo basado en indicadores cuantitativos y cualitativos,
+alineados con los principios de la ingeniería de requerimientos y las mejores prácticas del
+desarrollo de software.
 
-\section{Indicadores de evaluación}
+\section{Métricas e Indicadores de evaluación }
 
-\lipsum[1]
+Los indicadores de desempeño se definen a partir de los objetivos específicos del proyecto
+y se estructuran en dos dimensiones: \textbf{técnica} y \textbf{de gestión}.
+Su definición sigue el criterio \textbf{SMART} (Específico, Medible, Alcanzable, Relevante y
+Temporal), garantizando trazabilidad directa hacia los requerimientos funcionales y no
+funcionales del sistema.
 
-\section{Mecanismos de monitoreo}
+\begin{table}[h]
+\scriptsize
+\centering
+\begin{tabular}{|c|p{2.5cm}|p{3.5cm}|c|c|c|}
+\hline
+\textbf{\#} & \textbf{Indicador} & \textbf{Descripción} & \textbf{Meta} & \textbf{Fuente de dato} & \textbf{Frecuencia} \\
+\hline
+I-01 & Cobertura de requerimientos & \% de historias de usuario implementadas vs. total definido & $\geq$ 90\% & Backlog / GitHub Issues & Quincenal \\
+\hline
+I-02 & Velocidad de sprint & Puntos de historia completados por iteración & Plan $\pm$ 15\% & Tablero de tareas & Semanal \\
+\hline
+I-03 & Densidad de defectos & N.º de bugs por módulo funcional & $\leq$ 2 por módulo & GitHub Issues / test logs & Semanal \\
+\hline
+I-04 & Cumplimiento de hitos & N.º de entregables entregados en fecha / total planificados & 100\% & Cronograma & Por hito \\
+\hline
+I-05 & Cobertura de pruebas & \% de requerimientos cubiertos por casos de prueba & $\geq$ 80\% & Informe de testing & Por entregable \\
+\hline
+I-06 & Disponibilidad del entorno & Uptime del servidor de desarrollo/producción & $\geq$ 95\% & Herramienta de monitoreo & Mensual \\
+\hline
+I-07 & Satisfacción del usuario & Calificación promedio en pruebas de usabilidad (escala 1-5) & $\geq$ 4.0 & Formulario de feedback & Por entrega \\
+\hline
+I-08 & Integración entre módulos & N.º de fallos de integración detectados en pruebas & $\leq$ 3 & Registros de integración & Por sprint \\
+\hline
+\end{tabular}
+\caption{Métricas e indicadores de cumplimiento del proyecto}
+\end{table}
 
-\lipsum[1]
+\section{Herramientas de monitoreo}
 
-\section{Hitos de control}
+El seguimiento del proyecto se apoyará en las siguientes plataformas y herramientas digitales,
+seleccionadas por su integración con el flujo de trabajo de desarrollo ágil y su disponibilidad
+sin costo para equipos académicos:
 
-\lipsum[1]
+\begin{itemize}
+    \item \textbf{GitHub}: Para el control de versiones y el seguimiento de issues.
+    \item \textbf{Jira}: Para la gestión de tareas y el monitoreo del progreso.
+    \item \textbf{Confluence}: Para la documentación y el conocimiento compartido.
+    \item \textbf{Selenium}: Para la automatización de pruebas de calidad.
+\end{itemize}
+
+\section{Frecuencia de Evaluación}
+El plan de monitoreo establece tres niveles de revisión, conforme a los hitos definidos en el
+cronograma del proyecto:
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+    \item \textbf{Revisión semanal} (Lunes, duración: 20 min):
+    \begin{itemize}
+        \item Revisión del tablero GitHub Projects: tareas completadas, en progreso y bloqueadas.
+        \item Actualización de indicadores I-02, I-03 en Google Sheets.
+        \item Identificación y registro de impedimentos técnicos o de coordinación.
+    \end{itemize}
+
+    \item \textbf{Revisión quincenal} (cada dos semanas, duración: 45 min):
+    \begin{itemize}
+        \item Análisis del grado de cobertura de requerimientos (I-01).
+        \item Comparación de velocidad de sprint planificada vs. ejecutada (I-02).
+        \item Revisión de integración de módulos y estado de pruebas (I-05, I-08).
+        \item Elaboración del informe quincenal de avance.
+    \end{itemize}
+
+    \item \textbf{Revisión por hito} (según entregables del cronograma):
+    \begin{itemize}
+        \item Validación formal del entregable ante los docentes responsables.
+        \item Evaluación integral de todos los indicadores (I-01 al I-08).
+        \item Reporte de cierre de hito con lecciones aprendidas y plan de acción correctivo.
+        \item Verificación de trazabilidad entre requerimientos, diseño e implementación.
+    \end{itemize}
+\end{enumerate}
+
