@@ -12,6 +12,7 @@
 *.blg
 *.bcf
 *.run.xml
+*.pdf
 
 # Carpeta de compilación (si la usas)
 build/
