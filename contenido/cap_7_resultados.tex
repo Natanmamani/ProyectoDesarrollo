@@ -1,14 +1,115 @@
 \newpage
 \chapter{RESULTADOS ESPERADOS}
 
-\section{Resultados cuantitativos}
+Al concluir el proyecto, se espera que la plataforma web desarrollada genere un impacto
+medible tanto en la eficiencia de la gestión administrativa del TUPA como en la experiencia
+de los distintos actores de la comunidad universitaria. Los resultados se clasifican en
+beneficios cuantitativos y cualitativos, y se alinean directamente con los ocho objetivos
 
-\lipsum[1]
+\section{Resultados cuantitativos}
+Los siguientes indicadores de resultado proyectan el impacto esperado de la solución una vez
+desplegada en producción y adoptada por la comunidad universitaria:
+
+{\small
+\begin{tabular}{|p{4.2cm}|c|c|p{3.8cm}|}
+\hline
+\textbf{Resultado esperado} & \textbf{Línea base (est.)} & \textbf{Meta} & \textbf{OE relacionado} \\
+\hline
+Reducción del tiempo promedio de atención por trámite & 5–7 días hábiles & $\leq$ 3 días hábiles & OE-03, OE-04 \\
+\hline
+Reducción de consultas presenciales innecesarias en ventanilla & 100\% presencial & $\leq$ 30\% presencial & OE-01, OE-02 \\
+\hline
+Incremento en la tasa de trámites resueltos en primer intento & $\sim$40\% & $\geq$ 75\% & OE-03, OE-05 \\
+\hline
+Porcentaje de módulos con panel de control operativo & 0\% (no existe) & 100\% & OE-06 \\
+\hline
+Disponibilidad del sistema en producción & N/A & $\geq$ 99\% mensual & OE-08 \\
+\hline
+Tiempo de respuesta del sistema (p95) & N/A & $\leq$ 2 segundos & OE-01, OE-08 \\
+\hline
+Generación automática de reportes administrativos & Manual (0 automatiz.) & $\geq$ 5 tipos de reporte & OE-07 \\
+\hline
+\end{tabular}
+}
+
+\textit{Nota: Los valores de línea base son estimaciones obtenidas del análisis de la
+problemática descrita. Serán validados con las oficinas administrativas
+durante la fase de levantamiento de requerimientos.}
 
 \section{Resultados cualitativos}
 
-\lipsum[1]
+\begin{itemize}
+    \item \textbf{Mejora de la experiencia de usuario:} La plataforma ofrecerá una interfaz
+    moderna, intuitiva y responsiva, reduciendo la curva de aprendizaje para estudiantes y
+    personal administrativo sin conocimientos técnicos avanzados (alineado con OE-01).
+
+    \item \textbf{Mayor transparencia institucional:} Los estudiantes podrán consultar en tiempo
+    real el estado de sus trámites, los requisitos exigidos y los costos vigentes, eliminando
+    la asimetría de información característica del sistema actual (OE-02, OE-04).
+
+    \item \textbf{Centralización y consistencia de la información:} La solución integrará los
+    procedimientos de distintas oficinas en un único punto de acceso, evitando duplicidades
+    y versiones desactualizadas del TUPA (OE-02, OE-06).
+
+    \item \textbf{Reducción de la sobrecarga administrativa:} La automatización de notificaciones
+    y validaciones documentales liberará tiempo del personal de ventanilla para tareas de
+    mayor valor agregado (OE-04, OE-05).
+
+    \item \textbf{Cultura de toma de decisiones basada en datos:} La generación de reportes y
+    estadísticas de trámites procesados facilitará la identificación de cuellos de botella y
+    la mejora continua de los procesos administrativos (OE-07).
+
+    \item \textbf{Sostenibilidad y escalabilidad técnica:} El despliegue en infraestructura en la
+    nube y el uso de estándares de desarrollo garantizarán la mantenibilidad y posibilidad de
+    extensión futura de la plataforma (OE-08).
+\end{itemize}
 
 \section{Impacto esperado}
 
-\lipsum[1]
+{\small
+\begin{tabular}{|p{2.8cm}|p{5.0cm}|p{4.8cm}|}
+\hline
+\textbf{Actor} & \textbf{Beneficio directo} & \textbf{Indicador de impacto} \\
+\hline
+Estudiantes & Acceso 24/7 a información del TUPA, registro en línea de solicitudes y seguimiento del estado de trámites & Reducción de tiempos de espera; disminución de traslados presenciales \\
+\hline
+Personal administrativo & Validación digital de documentos, panel de gestión por oficina, notificaciones automáticas de acciones pendientes & Menor carga manual; reducción de errores en el proceso \\
+\hline
+Jefes de oficina & Acceso a reportes estadísticos de trámites, monitoreo del desempeño del área y gestión de usuarios del sistema & Mejor visibilidad para toma de decisiones gerenciales \\
+\hline
+UNSAAC (institución) & Modernización de la imagen institucional, reducción de costos operativos y cumplimiento de estándares de gobierno digital & Mejora en indicadores de gestión universitaria \\
+\hline
+\end{tabular}
+}
+
+\section{Alineación con los Objetivos Específicos del Proyecto}
+
+La siguiente matriz evidencia la correspondencia directa entre los resultados esperados y los
+ocho objetivos específicos del proyecto, garantizando la trazabilidad requerida por el indicador
+de desempeño \textbf{AG-C12.01}:
+
+{\small
+\begin{tabular}{|p{1.0cm}|p{4.8cm}|p{6.4cm}|}
+\hline
+\textbf{OE} & \textbf{Objetivo Específico} & \textbf{Resultado / Entregable asociado} \\
+\hline
+OE-01 & Mejorar la interfaz y experiencia de usuario & Rediseño UX/UI; puntuación de usabilidad $\geq$ 4.0/5.0 \\
+\hline
+OE-02 & Facilitar la consulta de procedimientos, requisitos y costos & Módulo de búsqueda y consulta pública del TUPA \\
+\hline
+OE-03 & Optimizar el registro y seguimiento de trámites & Sistema de gestión de solicitudes con trazabilidad por estado \\
+\hline
+OE-04 & Implementar notificaciones sobre el estado de los procedimientos & Motor de notificaciones (correo electrónico / en plataforma) \\
+\hline
+OE-05 & Mejorar la gestión y validación de documentos digitales & Módulo de carga, validación y aprobación de documentos \\
+\hline
+OE-06 & Panel de control para oficinas administrativas & Dashboard por rol con métricas en tiempo real \\
+\hline
+OE-07 & Generación de reportes y estadísticas & Motor de reportes exportable (PDF / Excel) \\
+\hline
+OE-08 & Garantizar accesibilidad y disponibilidad & Despliegue en la nube con SLA $\geq$ 99\%; diseño responsivo \\
+\hline
+\end{tabular}
+}
+
+
