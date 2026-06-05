@@ -3,12 +3,150 @@
 
 \section{Gestión del proyecto}
 
-\lipsum[1]
+La gestión del proyecto se realiza bajo la metodología Scrum, con sprints de duración de 2 semanas. El equipo utiliza las siguientes herramientas:
+
+\begin{itemize}
+    \item \textbf{Jira:} Para la gestión del backlog, planificación de sprints y seguimiento de tareas.
+    \item \textbf{GitHub:} Control de versiones y repositorio central del código.
+    \item \textbf{Discord / WhatsApp:} Comunicación diaria del equipo.
+    \item \textbf{Google Drive:} Almacenamiento de documentación compartida.
+\end{itemize}
+
+El Scrum Master (Hernán) es el responsable de facilitar las ceremonias Scrum y eliminar bloqueos. El equipo se reúne diariamente a las 8:00 am para el Daily Meeting.
 
 \section{Estructura organizacional}
 
-\lipsum[1]
+El proyecto cuenta con la siguiente estructura organizacional:
+
+\begin{table}[H]
+    \centering
+    \caption{Estructura organizacional del proyecto}
+    \begin{tabular}{|p{4cm}|p{3.5cm}|p{6.5cm}|}
+        \hline
+        \textbf{Rol} & \textbf{Responsable} & \textbf{Funciones} \\
+        \hline
+        Scrum Master & Ramos Alata Hernan Washington (221989) & Facilitar ceremonias Scrum, gestionar Jira, coordinar entregas. \\
+        \hline
+        Product Owner & Equipo (rotativo) & Definir prioridades del backlog, validar entregables. \\
+        \hline
+        Desarrollador Backend & Vitorino Marin Efrain (160337) & Base de datos PostgreSQL, APIs, lógica del servidor. \\
+        \hline
+        Desarrollador Frontend & Mamani Flores Natan (230970) & Interfaces web, UI/UX, conexión con backend. \\
+        \hline
+        Tester & Polo Chura Marco Rosauro (141632) & Pruebas funcionales, reporte de bugs. \\
+        \hline
+        Soporte Documentación & Cabeza Huillca Flavio Antony (211265) & Redacción y revisión de documentación técnica. \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \section{Comunicaciones}
 
-\lipsum[1]
+\subsection{Canales de comunicación}
+
+\begin{itemize}
+    \item \textbf{Daily Meeting (8:00 am):} Reunión diaria de 15 minutos para sincronizar avances y bloqueos.
+    \item \textbf{Sprint Planning (lunes de inicio de sprint):} Planificación de tareas del sprint.
+    \item \textbf{Sprint Review (viernes final de sprint):} Demostración de avances a los docentes.
+    \item \textbf{Sprint Retrospective (viernes final de sprint):} Mejora continua del proceso.
+\end{itemize}
+
+\subsection{Recursos técnicos y despliegue}
+
+\textbf{Estructura del repositorio:}
+\begin{verbatim}
+tupaunsaac/
+|-- backend/
+|   |-- .env.example
+|   |-- database/
+|   |   |-- schema.sql
+|   |   |-- migrate.ts
+|   |   `-- seed.ts
+|   `-- src/
+|-- frontend/
+|   |-- .env.example
+|   `-- src/
+|-- docs/
+|   `-- Plan_Proyecto.pdf
+`-- docker-compose.yml
+\end{verbatim}
+
+\textbf{Variables de entorno:}
+\begin{verbatim}
+# Backend .env
+NODEENV=development
+BACKENDURL=http://localhost:8080
+FRONTENDURL=http://localhost:3000
+PORT=8080
+
+DBDIALECT=postgres
+DBHOST=localhost
+DBPORT=5432
+DBUSER=tupa
+DBPASS=tupa
+DBNAME=tupa
+
+JWTSECRET=cambia-este-secreto
+REDISURI=redis://:tupa@127.0.0.1:6379
+
+# Frontend .env
+VITEAPIBASEURL=http://localhost:8080
+VITEAPPNAME=Portal de Tramite Documentario UNSAAC
+\end{verbatim}
+
+\subsection{Configuración y despliegue}
+
+\textbf{Desarrollo local:}
+\begin{verbatim}
+docker compose up -d postgres redis
+cd backend && npm install && npm run dev
+cd frontend && npm install && npm run dev
+\end{verbatim}
+
+\textbf{Base de datos:}
+\begin{verbatim}
+cd backend
+npm run db:migrate   # Ejecuta schema.sql
+npm run db:seed      # Carga datos de prueba
+npm run db:setup     # Migrate + Seed
+\end{verbatim}
+
+\textbf{Despliegue en producción (Ubuntu 24.x):}
+\begin{verbatim}
+# Instalar dependencias
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install -y build-essential postgresql-client git
+
+# Instalar Node 24.x
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Instalar Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ${USER}
+
+# PostgreSQL con Docker
+docker volume create tupa_postgres_data
+docker run --name tupa-postgres -e POSTGRES_DB=tupa -e POSTGRES_USER=tupa -e POSTGRES_PASSWORD=tupa -p 5432:5432 -d --restart=always -v tupa_postgres_data:/var/lib/postgresql/data postgres:17
+
+# Redis con Docker
+docker run --name tupa-redis -p 6379:6379 -d --restart=always redis:latest redis-server --appendonly yes --requirepass "tupa"
+
+# Clonar y desplegar
+git clone https://github.com/lovito99/tupaunsaac.git
+cd tupaunsaac/backend && npm install && npm run build && npm run db:migrate
+cd ../frontend && npm install && npm run build
+\end{verbatim}
+
+\subsection{Enlaces útiles}
+
+\begin{itemize}
+    \item \textbf{Repositorio GitHub:} \url{https://github.com/Natanmamani/ProyectoDesarrollo}
+    \item \textbf{Prototipo Figma:} \url{https://figma.com/...} (Agregar enlace real)
+    \item \textbf{Jira:} \url{https://...} (Agregar enlace real)
+\end{itemize}
+
+\subsection{Contacto de soporte}
+
+Para consultas relacionadas con el despliegue y soporte técnico, contactar a: \texttt{lovito99\_m@live.com}
