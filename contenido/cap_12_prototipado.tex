@@ -3,12 +3,185 @@
 
 \section{Prototipado dinámico}
 
-\lipsum[1]
+Se desarrolló un prototipo dinámico de alta fidelidad utilizando la herramienta Figma, con el objetivo de visualizar la interacción y el flujo de navegación de la plataforma web antes de su implementación. El prototipo incluye las principales interfaces del sistema, permitiendo simular la experiencia del usuario final.
+
+\subsection{Pantallas del prototipo}
+
+A continuación, se presentan las principales pantallas que componen el prototipo dinámico de la Plataforma Web para la Optimización de la Gestión del TUPA de la UNSAAC.
+
+\subsubsection{Pantalla 1: Catálogo de Trámites}
+
+Pantalla principal que muestra el catálogo completo de trámites TUPA disponibles. Incluye un buscador por nombre o código, filtros por categorías (Educación, Grados y Títulos, Admisión, Certificados, Bienestar Universitario) y tarjetas con información resumida de cada trámite.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{images/img1}
-    \caption{Prototipo dinámico de la interfaz principal}
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_1.jpg}
+    \caption{Catálogo de trámites TUPA}
 \end{figure}
 
-\lipsum[1][1-4]
+\subsubsection{Pantalla 2: Detalle del Trámite - Grado de Bachiller}
+
+Pantalla que muestra la información detallada de un procedimiento específico. Incluye la unidad responsable, canales de atención, modalidad de pago, y la lista completa de requisitos organizados por categorías.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_2.jpg}
+    \caption{Detalle del trámite: Grado de Bachiller}
+\end{figure}
+
+\subsubsection{Pantalla 3: Datos del Interesado}
+
+Primer paso del formulario de solicitud. Solicita el tipo de solicitante (Estudiante/Egresado) y el número de documento (DNI). Al presionar "buscar", el sistema valida y autocompleta automáticamente los datos personales.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_3.jpg}
+    \caption{Datos del interesado - Paso 1 de 5}
+\end{figure}
+
+\subsubsection{Pantalla 4: Datos de la Petición}
+
+Segundo paso del formulario. Permite al usuario completar la información detallada de su solicitud, incluyendo el concepto de pago, motivo o asunto del trámite, y otros campos específicos según el tipo de procedimiento seleccionado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_4.jpg}
+    \caption{Datos de la petición - Paso 2 de 5}
+\end{figure}
+
+\subsubsection{Pantalla 5: Selección de Concepto de Pago}
+
+Pantalla que muestra los diferentes conceptos de pago asociados al trámite seleccionado. El monto total se actualiza automáticamente según la opción elegida.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_5.jpg}
+    \caption{Selección de concepto de pago - Paso 3 de 5}
+\end{figure}
+
+\subsubsection{Pantalla 6: Carga de Adjuntos}
+
+Pantalla para la subida de documentos requeridos. Muestra la lista de requisitos obligatorios y permite arrastrar archivos o hacer clic para explorar. Soporta formatos PDF, JPG y PNG con un tamaño máximo de 5 MB.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_6.jpg}
+    \caption{Carga de adjuntos - Paso 4 de 5}
+\end{figure}
+
+\subsubsection{Pantalla 7: Resumen y Envío}
+
+Pantalla de revisión final antes de generar el expediente. Muestra un resumen completo de la solicitud: datos del interesado, tipo de trámite, comprobante de pago, documentos adjuntos y el monto total.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_7.jpg}
+    \caption{Resumen y envío - Paso 5 de 5}
+\end{figure}
+
+\subsubsection{Pantalla 8: Confirmación de Registro}
+
+Pantalla de éxito que confirma que el trámite ha sido registrado. Muestra el número de expediente generado e incluye un código QR para guardar.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_8.jpg}
+    \caption{Confirmación de registro - Trámite exitoso}
+\end{figure}
+
+\subsubsection{Pantalla 9: Mis Expedientes}
+
+Panel principal del usuario autenticado que lista todos sus trámites. Muestra información como número de expediente, tipo de trámite, fecha de ingreso, estado y días restantes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_9.jpg}
+    \caption{Mis expedientes - Listado de trámites}
+\end{figure}
+
+\subsubsection{Pantalla 10: Bitácora Detallada del Trámite}
+
+Pantalla que muestra el historial completo de un expediente específico. Presenta una línea de tiempo con todas las acciones realizadas desde el registro hasta el estado actual.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_10.jpg}
+    \caption{Bitácora detallada del trámite}
+\end{figure}
+
+\subsubsection{Pantalla 11: Subsanación de Trámite}
+
+Pantalla para corregir documentos observados por el evaluador. Muestra el motivo de la observación, la fecha límite para subsanar, y permite cargar un nuevo documento corregido.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_11.jpg}
+    \caption{Subsanación de trámite}
+\end{figure}
+
+\subsubsection{Pantalla 12: Notificaciones}
+
+Centro de notificaciones del usuario. Muestra alertas sobre el progreso de los trámites: observaciones pendientes, pagos validados, expedientes finalizados y comunicados del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_12.jpg}
+    \caption{Centro de notificaciones}
+\end{figure}
+
+\subsubsection{Pantalla 13: Requisito de Pago Previo}
+
+Pantalla de advertencia que informa al usuario sobre la necesidad de contar con el voucher de pago original físico o constancia digital oficial antes de iniciar el trámite. Ofrece opciones para cancelar o continuar si ya realizó el pago.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_13.jpg}
+    \caption{Requisito de pago previo}
+\end{figure}
+
+\subsubsection{Pantalla 14: Detalle de Pago y Verificación}
+
+Pantalla que permite al usuario ingresar los datos exactos del comprobante de pago (número de recibo, fecha y monto) para validar su solicitud en el sistema de caja de la UNSAAC.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_14.jpg}
+    \caption{Verificación de pago}
+\end{figure}
+
+\subsubsection{Pantalla 15: Órdenes de Pago - Historial}
+
+Pantalla que muestra el historial y comprobantes de todas las transacciones realizadas por el usuario en la plataforma, incluyendo pagos de trámites, fechas, montos y estados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/prototipo_pagina_15.jpg}
+    \caption{Historial de órdenes de pago}
+\end{figure}
+
+\subsection{Flujo de navegación principal}
+
+El flujo principal del prototipo sigue la siguiente secuencia:
+
+\begin{enumerate}
+    \item El usuario accede al \textbf{Catálogo de trámites} y selecciona un procedimiento.
+    \item Visualiza el \textbf{detalle del trámite} con requisitos y costos.
+    \item Completa el formulario de solicitud en 5 pasos:
+        \begin{enumerate}
+            \item Datos del interesado
+            \item Datos de la petición
+            \item Selección de concepto de pago
+            \item Carga de adjuntos
+            \item Resumen y envío
+        \end{enumerate}
+    \item Recibe la \textbf{confirmación de registro} con número de expediente.
+    \item Realiza el \textbf{seguimiento} desde "Mis expedientes".
+    \item Si hay observaciones, accede a \textbf{subsanación} para corregir documentos.
+    \item Recibe \textbf{notificaciones} sobre el estado de sus trámites.
+\end{enumerate}
+
+
+
+\subsection{Validación del prototipo}
+
+El prototipo fue validado por los usuarios clave (personal administrativo de la UNSAAC y una muestra representativa de estudiantes), quienes proporcionaron retroalimentación sobre la usabilidad, claridad de la información y flujo de navegación. Los comentarios recibidos fueron incorporados en la versión final del prototipo antes de proceder a la implementación.
