@@ -1,22 +1,198 @@
 \newpage
 \chapter{METODOLOGÍA}
 
+% ------------------------------------------------------------
 \section{Metodología}
+% ------------------------------------------------------------
 
-\lipsum[1-2]
+El presente proyecto adopta \textbf{Scrum} como metodología de desarrollo, un marco de
+trabajo ágil ampliamente utilizado en proyectos de software que demandan flexibilidad,
+entregas incrementales y colaboración continua entre los integrantes del equipo.
 
-\section{Actividades principales}
+\subsection{Justificación de la elección}
 
-
-
-\lipsum[1]
+Scrum resulta idóneo para este proyecto por las siguientes razones:
 
 \begin{itemize}
-    \item Actividad 1: Descripción de la actividad principal 1
-    \item Actividad 2: Descripción de la actividad principal 2
-    \item Actividad 3: Descripción de la actividad principal 3
-    \item Actividad 4: Descripción de la actividad principal 4
-    \item Actividad 5: Descripción de la actividad principal 5
+    \item \textbf{Adaptabilidad a cambios:} los requerimientos del TUPA pueden evolucionar
+            durante el levantamiento de información con las oficinas de la UNSAAC; Scrum
+            permite incorporar estos cambios de forma ordenada en cada sprint.
+    \item \textbf{Entregas rápidas e incrementales:} al dividir el desarrollo en sprints de
+            duración fija, se obtienen avances funcionales verificables al final de cada
+            iteración, facilitando la retroalimentación oportuna del docente y los usuarios.
+    \item \textbf{Trabajo colaborativo:} el equipo está conformado por cinco integrantes con
+            roles complementarios; Scrum define responsabilidades claras y promueve la
+            comunicación constante mediante ceremonias estructuradas.
+    \item \textbf{Transparencia y seguimiento:} el uso de tableros de tareas y herramientas
+            como Jira permite visualizar el estado del proyecto en todo momento, favoreciendo
+            la trazabilidad de actividades y el cumplimiento de los indicadores establecidos
+            en el plan de monitoreo.
 \end{itemize}
 
-\lipsum[1][1-3]
+\subsection{Fases del ciclo de desarrollo}
+
+El ciclo de vida del proyecto se estructura en las siguientes fases, ejecutadas de forma
+iterativa a lo largo de los sprints planificados:
+
+\begin{enumerate}
+    \item \textbf{Planificación:} definición del alcance del sprint, estimación de historias
+            de usuario y asignación de tareas al equipo.
+    \item \textbf{Análisis:} levantamiento y refinamiento de requerimientos funcionales y no
+            funcionales del sistema, en coordinación con las oficinas administrativas de la
+            UNSAAC.
+    \item \textbf{Diseño:} elaboración de prototipos de interfaz en Figma, diseño de la
+            arquitectura del sistema y modelado de la base de datos.
+    \item \textbf{Implementación:} desarrollo de los módulos frontend y backend conforme a
+            las historias de usuario aprobadas en cada sprint.
+    \item \textbf{Pruebas:} verificación funcional, pruebas de integración y validación de
+            usabilidad con usuarios representativos.
+    \item \textbf{Despliegue:} publicación de incrementos en el entorno de producción y
+            monitoreo de disponibilidad y rendimiento del sistema.
+\end{enumerate}
+
+\subsection{Herramientas de gestión}
+
+El seguimiento del proyecto se realizará principalmente mediante \textbf{Jira}, herramienta
+que permite gestionar el backlog del producto, planificar sprints, registrar el avance de
+tareas y controlar los indicadores de desempeño definidos en el plan de monitoreo. De
+forma complementaria, se utilizará \textbf{GitHub} para el control de versiones del código
+fuente y la gestión de incidencias técnicas.
+
+\subsection{Roles del equipo Scrum}
+
+La siguiente tabla describe los roles Scrum asignados a cada participante del proyecto:
+
+\begin{table}[H]
+\centering
+\caption{Roles Scrum del equipo de desarrollo}
+\label{tab:roles_scrum}
+\begin{tabular}{|p{5cm}|p{3.5cm}|p{6cm}|}
+\hline
+\textbf{Integrante} & \textbf{Rol Scrum} & \textbf{Responsabilidad principal} \\
+\hline
+Ing. Julio Vladimir Quispe Sota & Product Owner &
+Definir y priorizar el backlog del producto; validar que los entregables cumplan con
+las necesidades administrativas del TUPA. \\
+\hline
+Ramos Alata Hernan Washington & Scrum Master &
+Facilitar las ceremonias Scrum, eliminar impedimentos y velar por el cumplimiento
+del proceso ágil en el equipo. \\
+\hline
+Vitorino Marin Efrain & Developer – Backend &
+Desarrollar la lógica de negocio, API REST y gestión de base de datos; delegar y
+coordinar subtareas del módulo backend. \\
+\hline
+Mamani Flores Natan & Developer – Frontend &
+Implementar las interfaces de usuario; delegar y coordinar subtareas del módulo
+frontend en coordinación con el diseñador UX/UI. \\
+\hline
+Cabeza Huillca Flavio Antony & Developer – UX/UI &
+Diseñar prototipos en Figma, definir la guía de estilos y coordinar la experiencia
+de usuario en toda la plataforma. \\
+\hline
+Polo Chura Marco Rosauro & QA Tester &
+Diseñar y ejecutar casos de prueba, reportar defectos en Jira y verificar el
+cumplimiento de los criterios de aceptación por sprint. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Ceremonias y seguimiento}
+
+El equipo ejecutará las siguientes ceremonias Scrum a lo largo del proyecto:
+
+\begin{itemize}
+    \item \textbf{Daily meeting (reunión diaria):} sesión de 15 minutos en la que cada
+            integrante comparte lo que realizó el día anterior, lo que hará ese día y los
+            impedimentos que enfrenta. Permite detectar bloqueos de forma temprana.
+    \item \textbf{Sprint planning (planificación del sprint):} al inicio de cada sprint, el
+            equipo selecciona las historias de usuario del backlog, las estima en puntos y las
+            descompone en tareas concretas asignadas a cada desarrollador en Jira.
+    \item \textbf{Sprint review (revisión del sprint):} al cierre de cada sprint, se
+            presenta el incremento funcional al Product Owner y, cuando corresponda, a los
+            docentes responsables, para obtener retroalimentación formal.
+    \item \textbf{Sprint retrospective (retrospectiva):} el equipo reflexiona sobre el proceso
+            de trabajo, identifica áreas de mejora y define acciones concretas para el
+            siguiente sprint.
+\end{itemize}
+
+% ------------------------------------------------------------
+\section{Actividades principales}
+% ------------------------------------------------------------
+
+A continuación se describen las actividades principales del proyecto, organizadas conforme
+al cronograma establecido. Cada actividad es liderada por un integrante responsable, quien
+además delega y coordina las subtareas correspondientes entre los demás miembros del equipo.
+
+\begin{description}
+
+    \item[Actividad 1: Reunión y planificación del proyecto.]
+    Consiste en la constitución formal del equipo, la definición del alcance general del
+    proyecto, la elaboración del cronograma de actividades y la configuración de las
+    herramientas de gestión (Jira, GitHub). Se establecen los acuerdos de comunicación
+    interna y se realiza la primera sesión de Sprint Planning. Esta actividad es liderada
+    por el \textbf{Scrum Master (Ramos Alata Hernan Washington)}, quien coordina la
+    organización del equipo y la asignación inicial de roles y responsabilidades.
+
+    \item[Actividad 2: Levantamiento de requerimientos.]
+    Comprende la identificación y documentación de los requerimientos funcionales y no
+    funcionales del sistema mediante entrevistas semiestructuradas con las oficinas
+    administrativas de la UNSAAC, análisis del TUPA vigente y revisión de documentación
+    institucional. Los resultados se registran como historias de usuario en el backlog de
+    Jira. Esta actividad es liderada por el \textbf{QA Tester (Polo Chura Marco Rosauro)},
+    quien dirige el análisis de requerimientos y delega la elaboración de fichas de
+    entrevista y documentos de especificación al resto del equipo.
+
+    \item[Actividad 3: Diseño de prototipos en Figma.]
+    Se elaboran los wireframes y prototipos interactivos de alta fidelidad de la plataforma,
+    incluyendo la guía de estilos, el sistema de componentes visuales y los flujos de
+    navegación para cada tipo de usuario (estudiante, personal administrativo y jefe de
+    oficina). Los prototipos son validados con usuarios representativos antes de iniciar el
+    desarrollo. Esta actividad es liderada por el \textbf{desarrollador UX/UI (Cabeza
+    Huillca Flavio Antony)}, quien diseña los prototipos y coordina los ajustes con el
+    equipo frontend.
+
+    \item[Actividad 4: Diseño de la base de datos.]
+    Incluye el modelado conceptual, lógico y físico de la base de datos del sistema,
+    definiendo entidades, relaciones, restricciones de integridad y procedimientos
+    almacenados necesarios para soportar los módulos de gestión de trámites, usuarios y
+    reportes. El modelo es revisado y aprobado por el Product Owner antes de su
+    implementación. Esta actividad es liderada por el \textbf{desarrollador backend
+    (Vitorino Marin Efrain)}, quien diseña el esquema de la base de datos y delega la
+    documentación del modelo al equipo.
+
+    \item[Actividad 5: Desarrollo de interfaces gráficas e implementación del módulo
+    frontend.]
+    Comprende la traducción de los prototipos aprobados en Figma a código, implementando
+    las vistas, componentes y flujos de interacción de la plataforma web. Se aplican
+    buenas prácticas de desarrollo frontend, diseño responsivo y accesibilidad. Esta
+    actividad es liderada por el \textbf{desarrollador frontend (Mamani Flores Natan)},
+    quien coordina la implementación de interfaces y delega el desarrollo de componentes
+    específicos a los demás integrantes.
+
+    \item[Actividad 6: Integración de módulos e implementación de notificaciones y
+    validaciones.]
+    Se integran los módulos frontend y backend del sistema, incluyendo el motor de
+    notificaciones (correo electrónico y notificaciones en plataforma) y los mecanismos
+    de validación documental. Se verifican los contratos de la API REST y la correcta
+    comunicación entre componentes. Esta actividad es liderada por el \textbf{desarrollador
+    backend (Vitorino Marin Efrain)}, quien coordina la integración técnica y gestiona los
+    ajustes necesarios con el equipo frontend.
+
+    \item[Actividad 7: Pruebas y corrección de errores.]
+    Abarca la ejecución de pruebas funcionales, de integración y de usabilidad sobre los
+    módulos desarrollados. Los defectos identificados se registran en Jira y se priorizan
+    para su corrección en el sprint correspondiente. Se verifica el cumplimiento de los
+    criterios de aceptación definidos en las historias de usuario. Esta actividad es
+    liderada por el \textbf{QA Tester (Polo Chura Marco Rosauro)}, quien diseña los casos
+    de prueba y coordina las sesiones de validación con usuarios finales.
+
+    \item[Actividad 8: Elaboración de documentación final y presentación del proyecto.]
+    Comprende la redacción de la documentación técnica y académica del proyecto (memoria
+    del sistema, manual de usuario, informe final), la preparación de la presentación ante
+    los docentes y la entrega formal de todos los artefactos del proyecto. Esta actividad
+    es liderada por el \textbf{Scrum Master (Ramos Alata Hernan Washington)}, quien
+    coordina la consolidación de la documentación y delega la redacción de secciones
+    específicas a cada integrante según su área de responsabilidad.
+
+\end{description}

@@ -1,7 +1,10 @@
 \newpage
+
 \chapter{INFRAESTRUCTURA Y RECURSOS}
 
+% ------------------------------------------------------------
 \section{Infraestructura tecnológica}
+
 La plataforma web se desarrollará bajo una arquitectura cliente-servidor moderna, escalable y 
 desplegable tanto en entornos cloud como en infraestructura local. Para el alojamiento definitivo 
 se contemplan dos escenarios: (1) uso de servicios cloud como AWS (Amazon Web Services), Google 
@@ -16,7 +19,112 @@ peticiones, y Docker para la contenerización de los servicios, facilitando el d
 del entorno.
 
 
+% ------------------------------------------------------------
+
+La plataforma web para la gestión del TUPA de la UNSAAC se desarrolla sobre una
+arquitectura cliente-servidor desacoplada, en la que el frontend y el backend constituyen
+proyectos independientes que se comunican a través de una \textbf{API REST}. Esta separación
+favorece la escalabilidad, el mantenimiento independiente de cada capa y la posibilidad de
+extender la plataforma en el futuro sin afectar el núcleo del sistema.
+
+
+\subsection*{Frontend}
+
+La capa de presentación está construida con \textbf{Vue.js} utilizando \textbf{Vite} como
+herramienta de construcción y servidor de desarrollo, lo que garantiza tiempos de compilación
+rápidos y una experiencia de desarrollo ágil. El diseño visual y la maquetación de componentes
+se realizan con \textbf{Tailwind CSS}, un framework de utilidades que permite construir
+interfaces modernas, responsivas y consistentes sin necesidad de hojas de estilo personalizadas
+extensas. El lenguaje principal es \textbf{TypeScript}, cuya tipado estático contribuye a
+reducir errores en tiempo de desarrollo y mejora la mantenibilidad del código.
+
+La estructura del proyecto frontend incluye una carpeta \texttt{public/} para recursos
+estáticos, una carpeta \texttt{src/} con los componentes, vistas y lógica de la aplicación,
+y archivos de configuración como \texttt{vite.config.ts}, \texttt{tsconfig.json} y
+\texttt{docker-compose.yml} para la orquestación de contenedores.
+
+\subsection*{Backend}
+
+La capa de lógica de negocio y acceso a datos está desarrollada íntegramente en
+\textbf{TypeScript}, garantizando coherencia de tipos entre frontend y backend. La estructura
+del proyecto incluye una carpeta \texttt{src/} con los módulos del sistema y una carpeta
+\texttt{database/} que concentra los archivos de gestión de la base de datos:
+\texttt{schema.sql} con la definición del esquema relacional, \texttt{migrate.ts} para la
+ejecución controlada de migraciones y \texttt{seed.ts} para la carga inicial de datos de
+prueba.
+
+\subsection*{Base de datos}
+
+El sistema de gestión de bases de datos utilizado es \textbf{PostgreSQL}, un motor relacional
+de código abierto robusto y ampliamente adoptado en entornos de producción. PostgreSQL
+proporciona soporte nativo para transacciones ACID, integridad referencial y tipos de datos
+avanzados, características esenciales para garantizar la consistencia de los expedientes
+administrativos gestionados por la plataforma.
+
+\subsection*{Servicios complementarios}
+
+\begin{itemize}
+    \item \textbf{Redis:} se emplea como sistema de caché en memoria y gestor de colas de
+            tareas asíncronas, permitiendo optimizar los tiempos de respuesta del sistema y
+            gestionar el envío de notificaciones de forma eficiente sin bloquear el hilo
+            principal de la aplicación.
+    \item \textbf{Docker:} toda la infraestructura del proyecto está contenedorizada mediante
+            \textbf{Docker} y orquestada con \textbf{Docker Compose}, lo que garantiza entornos
+            de desarrollo, pruebas y producción reproducibles e independientes del sistema
+            operativo del desarrollador. El archivo \texttt{docker-compose.yml} define los
+            servicios del frontend, backend, base de datos PostgreSQL y Redis como contenedores
+            interconectados.
+\end{itemize}
+
+\subsection*{Herramientas de desarrollo}
+
+\begin{table}[H]
+\centering
+\caption{Herramientas de desarrollo utilizadas en el proyecto}
+\label{tab:herramientas}
+\begin{tabular}{|p{4cm}|p{9.5cm}|}
+\hline
+\textbf{Herramienta} & \textbf{Uso en el proyecto} \\
+\hline
+Visual Studio Code & Editor de código principal para el desarrollo frontend y backend. \\
+\hline
+GitHub & Control de versiones del código fuente y seguimiento de incidencias técnicas. \\
+\hline
+Figma & Diseño de prototipos de alta fidelidad, guía de estilos y flujos de navegación. \\
+\hline
+Postman & Prueba y documentación de los endpoints de la API REST. \\
+\hline
+Jira & Gestión del backlog, planificación de sprints y seguimiento del progreso del equipo. \\
+\hline
+Docker Desktop & Administración local de los contenedores y servicios del proyecto. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{Arquitectura general del sistema}
+
+El sistema sigue una arquitectura \textbf{REST API desacoplada} en tres capas principales:
+
+\begin{enumerate}
+    \item \textbf{Capa de presentación (Frontend):} aplicación Vue.js que consume los
+            endpoints de la API REST, renderiza las vistas según el rol del usuario autenticado
+            y gestiona el estado de la aplicación en el cliente.
+    \item \textbf{Capa de lógica de negocio (Backend):} servidor TypeScript que expone una
+            API REST, procesa las solicitudes, aplica las reglas de negocio del TUPA y se
+            comunica con la base de datos y los servicios de Redis.
+    \item \textbf{Capa de datos:} base de datos PostgreSQL que almacena la información de
+            usuarios, trámites, documentos y configuraciones del sistema; Redis actúa como
+            capa de caché y cola de tareas asíncronas.
+\end{enumerate}
+
+La comunicación entre capas se realiza mediante peticiones HTTP/HTTPS con formato JSON,
+y la autenticación de usuarios se gestiona a través de tokens JWT (\textit{JSON Web Tokens}),
+garantizando el control de acceso por roles (estudiante, personal administrativo, jefe de
+oficina).
+
+% ------------------------------------------------------------
 \section{Recursos humanos}
+
 El recurso humano necesario para llevar a cabo el proyecto está conformado por  estudiantes 
 avanzados con perfiles técnicos específicos. El equipo central incluye: desarrolladores fullstack 
 (encargados del backend, lógica de negocio e integración de APIs), diseñador UX/UI (responsable de 
@@ -26,7 +134,47 @@ miembros poseen formación en Ingeniería Informática, Ingeniería de Sistemas 
 desarrollo web y trabajo colaborativo bajo metodologías ágiles.
 
 
+% ------------------------------------------------------------
+
+El equipo de desarrollo está conformado por cinco integrantes de la Escuela Profesional de
+Ingeniería Informática y de Sistemas de la UNSAAC, cada uno con un rol definido dentro del
+marco de trabajo Scrum adoptado por el proyecto. Adicionalmente, el docente del curso cumple
+la función de Product Owner, orientando el desarrollo hacia las necesidades reales del sistema
+administrativo universitario.
+
+
+\begin{table}[H]
+\centering
+\caption{Equipo de desarrollo del proyecto}
+\label{tab:equipo_humano}
+\begin{tabular}{|p{5cm}|p{3.5cm}|p{5.5cm}|}
+\hline
+\textbf{Nombre} & \textbf{Rol} & \textbf{Responsabilidad principal} \\
+\hline
+Ing. Julio Vladimir Quispe Sota & Product Owner &
+Validar requerimientos y aprobar entregables del proyecto. \\
+\hline
+Ramos Alata Hernan Washington & Scrum Master &
+Coordinar el equipo, facilitar ceremonias Scrum y gestionar impedimentos. \\
+\hline
+Vitorino Marin Efrain & Developer – Backend &
+Desarrollar la lógica de negocio, API REST y gestión de base de datos. \\
+\hline
+Mamani Flores Natan & Developer – Frontend &
+Implementar las interfaces de usuario con Vue.js y Tailwind CSS. \\
+\hline
+Cabeza Huillca Flavio Antony & Developer – UX/UI &
+Diseñar prototipos en Figma y definir la experiencia de usuario. \\
+\hline
+Polo Chura Marco Rosauro & QA Tester &
+Diseñar y ejecutar casos de prueba; reportar y dar seguimiento a defectos. \\
+\hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
 \section{Recursos materiales}
+
 Los recursos materiales contemplan tanto equipos de cómputo como herramientas de software y materiales de 
 oficina. En cuanto a hardware, se requiere un mínimo de cinco (5) computadoras portátiles con procesador 
 Intel i5 o superior, 16 GB de RAM y almacenamiento SSD de 256 GB para las tareas de desarrollo, pruebas 
@@ -37,4 +185,39 @@ con repositorio en GitHub o GitLab), entornos de desarrollo integrado (Visual St
 de modelado de bases de datos (DBeaver, pgModeler), herramientas de diseño (Figma para prototipado), y suites 
 de ofimática para la documentación. Finalmente, se consideran materiales de oficina como cuadernos de bitácora, 
 pizarras para planificación, y suministros para las reuniones de coordinación y presentaciones.
+
+
+% ------------------------------------------------------------
+
+Para el desarrollo de la plataforma, el equipo dispone de los recursos físicos y digitales
+descritos a continuación, los cuales han sido considerados en el presupuesto del proyecto
+(véase el Capítulo XI).
+
+\subsection*{Equipamiento}
+
+Cada integrante del equipo cuenta con una \textbf{computadora portátil} de uso personal,
+lo que permite trabajar de forma distribuida y continua tanto en sesiones presenciales como
+remotas. Adicionalmente, se dispone de un \textbf{servidor de desarrollo} destinado al
+despliegue del entorno de pruebas y la ejecución de los contenedores Docker durante las
+fases de integración y validación del sistema. El equipamiento incluye también los
+\textbf{periféricos} necesarios (monitores, teclados, ratones y dispositivos de
+almacenamiento externo) para garantizar condiciones de trabajo adecuadas para cada
+desarrollador.
+
+\subsection*{Software y licencias}
+
+El proyecto hace uso de herramientas de software en su mayoría de código abierto o con
+planes gratuitos para equipos académicos, lo que minimiza los costos asociados a licencias.
+Entre los recursos de software se consideran las \textbf{licencias de herramientas de
+desarrollo} requeridas por el equipo, así como el \textbf{hosting y dominio} necesarios
+para el despliegue de la plataforma en un entorno de producción accesible para los usuarios
+de la UNSAAC.
+
+\subsection*{Materiales de oficina e impresión}
+
+Se contemplan los \textbf{materiales de oficina} necesarios para las actividades de
+planificación, levantamiento de requerimientos y reuniones de equipo (papelería, carpetas,
+útiles de escritorio), así como los costos de \textbf{impresión y encuadernación} del
+informe final y los documentos formales del proyecto que deben ser entregados físicamente
+al docente responsable.
 
